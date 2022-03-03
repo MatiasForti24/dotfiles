@@ -5,8 +5,17 @@
 :set smarttab
 :set softtabstop=4
 :set mouse=a
-let mapleader=","
+let mapleader=" "
+set relativenumber
+set nohlsearch
+set noerrorbells
+set nowrap
+set noswapfile
+set incsearch
+set scrolloff=8
+set colorcolumn=80
 
+" Vim-Plug start
 call plug#begin()
 
 Plug 'https://github.com/vim-airline/vim-airline'
@@ -15,18 +24,42 @@ Plug 'https://github.com/preservim/nerdtree'
 Plug 'http://github.com/tpope/vim-surround'
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
-Plug 'morhetz/gruvbox'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'sheerun/vim-polyglot'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'gruvbox-community/gruvbox'
 Plug 'https://github.com/jiangmiao/auto-pairs'
 Plug 'phanviet/vim-monokai-pro'
 
+" Intellisense supuestamente
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'williamboman/nvim-lsp-installer'
+
+
+
 call plug#end()
 set termguicolors
-set background=dark
+"set background=dark
 
 colorscheme gruvbox
+highlight Normal guibg=none
+
+
+
+
 
 
 " Mappings
-nmap <leader>ne :NERDTree<cr>
 nmap <leader>nc :NERDTreeClose<cr>
+nmap <leader>ne :NERDTree<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
 
+nnoremap Y y$
+
+vnoremap J :m '>+1<CR>gv==gv
+vnoremap K :m '<-2<CR>gv==gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
