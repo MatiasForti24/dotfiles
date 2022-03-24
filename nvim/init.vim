@@ -32,9 +32,7 @@ Plug 'https://github.com/jiangmiao/auto-pairs'
 Plug 'phanviet/vim-monokai-pro'
 
 " Intellisense supuestamente
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 
@@ -63,3 +61,12 @@ inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
+
+
+"Mapings para coc & bals
+
+xmap <leader>fo <Plug>(coc-format-selected)
+nmap <leader>fo <Plug>(coc-format-selected)
+
+"chit sheet
+nnoremap <leader>ch :!tmux neww ~/dotfiles/chit-shit/cht.sh<CR>==
