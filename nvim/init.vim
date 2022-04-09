@@ -71,4 +71,4 @@ xmap <leader>fo <Plug>(coc-format-selected)
 nmap <leader>fo <Plug>(coc-format-selected)
 
 "chit sheet
-nnoremap <leader>ch :!tmux neww /home/mforti/dotfiles/chit-shit/cht.sh<CR>==
+"nnoremap <leader>ch :!tmux neww /home/mforti/dotfiles/chit-shit/cht.sh<CR>==
