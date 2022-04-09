@@ -1,9 +1,13 @@
 #!/bin/bash
 
-lenguas=`echo "golang python rust nodejs " | tr ' ' '\n'`
-selected=`printf "$lenguas" | fzf`
-echo $selected
-read -p "query: " query
-echo $query
-curl cht.sh/$selected/`echo $query | tr ' ' '+'` & while [ : ]; do sleep 1; done;
+selected=`cat ~/.tmux-cht-langs ~/.tmux-cht-utils | fzf`
+
+read -p "Query: " query
+
+if grep -qs "$selected" ~/.tmux-cht-langs; then 
+	query=`echo $query | tr ' ' '+'`
+	tmux neww bash -c "echo \"curl cht.sh/$selected/$query/\" & curl cht.sh/$selected/$query & while [ : ]; do sleep 1; done"
+else 
+	tmux neww bash -c "curl -s cht.sh/$selected~$query | less"
+fi
 
