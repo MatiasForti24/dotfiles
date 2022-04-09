@@ -27,10 +27,13 @@ Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'gruvbox-community/gruvbox'
 Plug 'https://github.com/jiangmiao/auto-pairs'
+"ColorSchemes
+Plug 'gruvbox-community/gruvbox'
 Plug 'phanviet/vim-monokai-pro'
-
+Plug 'alessandroyorba/despacio'
+Plug 'alessandroyorba/alduin'
+Plug 'zeis/vim-kolor'
 " Intellisense supuestamente
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -64,7 +67,6 @@ nnoremap <leader>k :m .-2<CR>==
 
 
 "Mapings para coc & bals
-
 xmap <leader>fo <Plug>(coc-format-selected)
 nmap <leader>fo <Plug>(coc-format-selected)
 
