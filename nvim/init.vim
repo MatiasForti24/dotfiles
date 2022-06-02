@@ -4,7 +4,6 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set softtabstop=4
-set mouse=a
 let mapleader=" "
 set relativenumber
 set nohlsearch
@@ -38,7 +37,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 set termguicolors
-"set background=dark
+set background=dark
 
 colorscheme gruvbox
 highlight Normal guibg=none
