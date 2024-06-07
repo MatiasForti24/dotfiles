@@ -12,8 +12,17 @@ set nowrap
 set noswapfile
 set incsearch
 set scrolloff=8
-set colorcolumn=80
-set expandtab
+set nofoldenable
+" Explicitly set python executable
+
+let g:python3_host_prog = '/usr/bin/python3'
+
+"Auto vim plug install
+
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
 
 " Vim-Plug start
 call plug#begin()
@@ -46,11 +55,29 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
+
+Plug 'lervag/vimtex'
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+
+Plug 'lervag/vimtex'
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+
+Plug 'sirver/ultisnips'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+Plug 'honza/vim-snippets'
+
 call plug#end()
 
 set termguicolors
 set background=dark
-colorscheme monokai_pro
+colorscheme alduin
 "highlight Normal guibg=none
 "highlight Normal ctermbg=NONE
 "highlight nonText ctermbg=NONE
